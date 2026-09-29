@@ -10,10 +10,10 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  * @notice Gas-optimized, secure ERC20 built on Termux
  */
 contract SecureERC20 is ERC20, Ownable {
-    uint256 public constant MAX_SUPPLY = 1_000_000 * 10**18;
-    
+    uint256 public constant MAX_SUPPLY = 1_000_000 * 10 ** 18;
+
     constructor() ERC20("SecureDZ Token", "SDZ") Ownable(msg.sender) {
-        _mint(msg.sender, 100_000 * 10**18); // initial supply
+        _mint(msg.sender, 100_000 * 10 ** 18); // initial supply
     }
 
     function mint(address to, uint256 amount) external onlyOwner {
